@@ -1,0 +1,65 @@
+.banner-container {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Adjust Image Size */
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Ensures the image covers the container */
+}
+
+
+/* Custom Dots - Positioned Below the Image */
+
+.custom-dots {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+/* Dots Styling */
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff6347;
+    opacity: 0.5;
+    border: none;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #ff4500;
+    opacity: 1;
+}
+
+.dot:hover {
+    background-color: #ff7f50;
+    opacity: 0.8;
+}
+
+
+/* Responsive Adjustments */
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: auto;
+        width: 100%;
+    }
+    .custom-dots {
+        margin-top: 8px;
+        gap: 8px;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}

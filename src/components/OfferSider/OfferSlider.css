@@ -1,0 +1,205 @@
+/* Offers Heading */
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #920034;
+    /* Deep Maroon */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Underline Effect */
+
+h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #ffb600;
+    /* Warm Yellow */
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+
+/* Main container (Full Width) */
+
+.offer-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: auto;
+    padding: 15px 0;
+}
+
+
+/* Slider wrapper */
+
+.slider-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+/* Sliding container */
+
+.slider-content {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 15px;
+}
+
+
+/* Individual offer card (Adjust Width for Full View) */
+
+.offer-card {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+    width: 256px;
+    height: 80px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Alternating Colors */
+
+.odd {
+    background-color: #920034;
+    /* Maroon */
+    color: #fff;
+}
+
+.even {
+    background-color: #ffb600;
+    /* Warm Yellow */
+    color: #3E2723;
+}
+
+
+/* Hover Effects */
+
+.offer-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Offer Icon */
+
+.offer-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+
+/* Offer text */
+
+.offer-text {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+
+/* Title */
+
+.offer-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+
+/* Subtitle */
+
+.offer-subtitle {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+
+/* Slider Navigation Buttons */
+
+.caret {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    /* Subtle dark background */
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    z-index: 100;
+}
+
+
+/* Left and Right button positioning */
+
+.caret-left {
+    left: 10px;
+}
+
+.caret-right {
+    right: 10px;
+}
+
+
+/* Hover effect */
+
+.caret:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+
+/* Click effect */
+
+.caret:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 18px;
+    }
+    h3::after {
+        width: 40px;
+        height: 3px;
+    }
+    .offer-slider {
+        padding: 10px;
+    }
+    .offer-card {
+        width: 250px;
+        height: 80px;
+    }
+    .caret {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
