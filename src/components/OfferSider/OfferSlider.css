@@ -33,9 +33,10 @@ h3::after {
     align-items: center;
     justify-content: center;
     position: relative;
+    scroll-snap-type: x mandatory;
     width: 100%;
     max-width: 100%;
-    height: 80px;
+    height: 90px;
     overflow: hidden;
     border-radius: 10px;
     margin: auto;
@@ -58,6 +59,7 @@ h3::after {
     display: flex;
     transition: transform 0.5s ease-in-out;
     gap: 15px;
+    
 }
 
 
@@ -67,9 +69,10 @@ h3::after {
     display: flex;
     align-items: center;
     border-radius: 10px;
-    padding: 15px;
-    width: 256px;
-    height: 80px;
+    margin-top: 10px-;
+    padding: 5px;
+    width: 300px;
+    height: 70px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -113,7 +116,8 @@ h3::after {
 .offer-text {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 270px;
+    padding: 5px 10px;
 }
 
 
@@ -121,18 +125,20 @@ h3::after {
 
 .offer-title {
     font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 4px;
+    font-size: 12px;
+    margin: 2px;
 }
 
 
 /* Subtitle */
-
 .offer-subtitle {
     font-size: 12px;
     opacity: 0.9;
+    width: 200px;
+    overflow: hidden; /* Hide the overflowing content */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis ("...") to indicate overflow */
 }
-
 
 /* Slider Navigation Buttons */
 
@@ -149,6 +155,7 @@ h3::after {
     justify-content: center;
     font-size: 18px;
     /* Subtle dark background */
+    
     border-radius: 50%;
     transition: all 0.2s ease-in-out;
     z-index: 100;

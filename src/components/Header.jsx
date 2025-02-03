@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Styles/Navbar.css"
 
-function Navbar() {
+function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
       <div className="container">
@@ -31,4 +31,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Header;

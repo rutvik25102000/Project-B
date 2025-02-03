@@ -52,12 +52,12 @@ const OffersSlider = () => {
   };
 
   return (
-    <div className='container'>
+    <div className='container mb-4'>
       <h3 className="text-start mt-4 offer-heading">Offers</h3>
 
       <div className="offer-slider">
         {!hideLeft && (
-          <button className="caret caret-left" onClick={prevSlide}>◀</button>
+          <button className="caret caret-left" onClick={prevSlide}>{`<`}</button>
         )}
 
         <div className="slider-container" ref={sliderRef} onScroll={updateButtonVisibility}>
@@ -75,7 +75,7 @@ const OffersSlider = () => {
         </div>
 
         {!hideRight && (
-          <button className="caret caret-right" onClick={nextSlide}>▶</button>
+          <button className="caret caret-right" onClick={nextSlide}>{`>`}</button>
         )}
       </div>
     </div>

@@ -5,6 +5,7 @@ import Categories from '../components/Categories/Categories';
 
 
 
+
 function Home() {
   return (
     <div>
@@ -12,6 +13,7 @@ function Home() {
       <div className='container'>
       <Offers />
       <Categories />
+      
       </div>
     </div>
   );

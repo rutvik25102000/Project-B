@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import { Nav } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
-import image1 from "../../assets/CategoriesImages/WhatsApp Image 2023-12-20 at 5.06.19 PM (2).jpeg";
-import image2 from "../../assets/CategoriesImages/Everyday Biryani Combos (1).png";
-import image3 from "../../assets/CategoriesImages/gbc-bbk-colab.jpg";
-import image4 from "../../assets/CategoriesImages/kolkata-cat-img.jpg";
-import image5 from "../../assets/CategoriesImages/lucknowi-ndd.jpg";
-import image6 from "../../assets/CategoriesImages/paneer-nawabi.jpg";
+import './styles.css';  // Add the relevant styles for your MenuSlider.
+import CategoryCards from '../FoodCards/categoriesCard';
 
 const MenuSlider = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -17,19 +10,36 @@ const MenuSlider = () => {
     { name: 'Non-Veg', type: 'non-veg' },
     { name: 'Best Seller', type: 'best-seller' }
   ];
+
   const menuItems = [
-    { title: 'Lunch Combos starting @299', image: image1 },
-    { title: 'Hyderabadi Biryani', image: image2 },
-    { title: 'Lucknowi Biryani', image: image3 },
-    { title: 'Kolkata Biryani', image: image4 },
-    { title: 'Everyday Biryani Combos', image: image5 },
-    { title: 'Biryani by Chef Saransh Goila', image: image6 }
-];
+    { title: 'Lunch Combos starting @299', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/lunch-combo-299-final.jpg' },
+    { title: 'Hyderabadi Biryani', type: 'non-veg', image: 'https://mis.rezolpos.in/images/catimg/WhatsApp%20Image%202023-12-20%20at%203.30.01%20PM.jpeg' },
+    { title: 'Lucknowi Biryani', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/lucknowi-ndd.jpg' },
+    { title: 'Kolkata Biryani', type: 'non-veg', image: 'https://mis.rezolpos.in/images/catimg/kolkata-cat-img.jpg' },
+    { title: 'Everyday Biryani Combos', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/Everyday%20Biryani%20Combos%20(1).png' },
+    { title: 'Biryani by Chef Saransh Goila', type: 'best-seller', image: 'https://mis.rezolpos.in/images/catimg/gbc-bbk-colab.jpg' },
+    { title: 'Kebabs', type: 'non-veg', image: 'https://mis.rezolpos.in/images/catimg/ChickenGheeRoast%20(1).jpg' },
+    { title: 'Korma and Curries', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/paneer-nawabi.jpg' },
+    { title: 'Rolls', type: 'best-seller', image: 'https://mis.rezolpos.in/images/catimg/tikka_Listing.jpg' },
+    { title: 'Breads & Extras', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/Rumali%20roti.jpg' },
+    { title: 'Beverages', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/WhatsApp%20Image%202023-12-20%20at%205.06.19%20PM%20(2).jpeg' },
+    { title: 'Everyday Biryani Combos', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/Everyday%20Biryani%20Combos%20(1).png' },
+    { title: 'Biryani by Chef Saransh Goila', type: 'best-seller', image: 'https://mis.rezolpos.in/images/catimg/gbc-bbk-colab.jpg' },
+    { title: 'Kebabs', type: 'non-veg', image: 'https://mis.rezolpos.in/images/catimg/ChickenGheeRoast%20(1).jpg' },
+    { title: 'Korma and Curries', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/paneer-nawabi.jpg' },
+    { title: 'Rolls', type: 'best-seller', image: 'https://mis.rezolpos.in/images/catimg/tikka_Listing.jpg' },
+    { title: 'Breads & Extras', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/Rumali%20roti.jpg' },
+    { title: 'Beverages', type: 'veg', image: 'https://mis.rezolpos.in/images/catimg/WhatsApp%20Image%202023-12-20%20at%205.06.19%20PM%20(2).jpeg' },
+    { title: 'Desserts', type: 'best-seller', image: 'https://mis.rezolpos.in/images/catimg/Matka-Phirni-(best)%20(1)%20(1)%20(1)%20(1).jpeg' }
+  ];
+
+  const filteredMenuItems = menuItems.filter(item => item.type === categories[activeCategory].type);
 
   return (
-
-    <div className="menu-container ">
+    <div className="container">
       <h3 className="categories-title">Categories</h3>
+
+      {/* Static categories section */}
       <div className="category-buttons">
         {categories.map((category, index) => (
           <button
@@ -41,13 +51,10 @@ const MenuSlider = () => {
           </button>
         ))}
       </div>
-      <div className="menu-grid">
-        {menuItems.map((item, index) => (
-          <div key={index} className="menu-card">
-            <img src={item.image} alt={item.title} className="menu-image" />
-            <p className="menu-title">{item.title}</p>
-          </div>
-        ))}
+
+      {/* Category Cards (Slider) */}
+      <div className="slider-section">
+        <CategoryCards categories={filteredMenuItems} />
       </div>
     </div>
   );
