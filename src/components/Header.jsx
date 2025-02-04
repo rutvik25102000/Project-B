@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./Styles/Navbar.css"
+import "./Styles/Header.css"
 
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white ">
       <div className="container">
         <Link className="navbar-brand fw-bold" to="/">Biryani By Kilo</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

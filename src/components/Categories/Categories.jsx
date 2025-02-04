@@ -37,8 +37,13 @@ const MenuSlider = () => {
 
   return (
     <div className="container">
-      <h3 className="categories-title">Categories</h3>
-
+      <div className='categories-heading-buttons'>
+        <div>
+        <h3 className="text-start mt-4 offer-heading text-uppercase fw-bold" style={{ color: 'black', marginBottom: '15px', position: 'relative', display: 'inline-block' }}>
+        Categories
+        <span className="d-block" style={{ width: '50px', height: '4px', backgroundColor: '#ffb600', marginTop: '5px', borderRadius: '2px' }}></span>
+      </h3>
+      </div>
       {/* Static categories section */}
       <div className="category-buttons">
         {categories.map((category, index) => (
@@ -51,7 +56,7 @@ const MenuSlider = () => {
           </button>
         ))}
       </div>
-
+      </div>
       {/* Category Cards (Slider) */}
       <div className="slider-section">
         <CategoryCards categories={filteredMenuItems} />

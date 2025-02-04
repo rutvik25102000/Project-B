@@ -7,13 +7,13 @@ import React from 'react';
 // import BulkOrder from './pages/BulkOrder';
 // import BookTable from './pages/BookTable';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Layot from './pages/Layout';
+import Layout from './pages/Layout';
 
 
 function App() {
   return (
     <div>
-     <Layot/>
+     <Layout/>
       {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />

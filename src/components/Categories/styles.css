@@ -2,11 +2,11 @@
     max-width: 1200px;
     margin: auto;
   }
-  
-  .categories-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
+  .categories-heading-buttons{
+    display: flex;
+    justify-content: space-between;
+   
+   
   }
   
   .category-buttons {
@@ -40,7 +40,7 @@
   }
   
   .category-button.active {
-    background: #ffd700;
+    background: #ffea73;
     color: black;
     font-weight: bold;
   }
