@@ -17,7 +17,6 @@
   }
   
   .category-button {
-    border: 1px solid #ccc;
     padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
@@ -74,3 +73,7 @@
     color: #333;
   }
   
+  .slider-section{
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+  }

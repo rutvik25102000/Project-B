@@ -4,6 +4,15 @@ import CategoryCards from '../FoodCards/categoriesCard';
 
 const MenuSlider = () => {
   const [activeCategory, setActiveCategory] = useState(0);
+  const getBootstrapClass = (type) => {
+    switch (type) {
+      case 'veg': return 'success'; // Green
+      case 'non-veg': return 'danger'; // Red
+      case 'best-seller': return 'warning'; // Orange
+      default: return 'secondary'; // Default gray
+    }
+  };
+  
 
   const categories = [
     { name: 'Veg', type: 'veg' },
@@ -37,26 +46,29 @@ const MenuSlider = () => {
 
   return (
     <div className="container">
-      <div className='categories-heading-buttons'>
-        <div>
-        <h3 className="text-start mt-4 offer-heading text-uppercase fw-bold" style={{ color: 'black', marginBottom: '15px', position: 'relative', display: 'inline-block' }}>
-        Categories
-        <span className="d-block" style={{ width: '50px', height: '4px', backgroundColor: '#ffb600', marginTop: '5px', borderRadius: '2px' }}></span>
-      </h3>
-      </div>
-      {/* Static categories section */}
-      <div className="category-buttons">
-        {categories.map((category, index) => (
-          <button
-            key={index}
-            className={`category-button ${category.type} ${activeCategory === index ? 'active' : ''}`}
-            onClick={() => setActiveCategory(index)}
-          >
-            {category.name}
-          </button>
-        ))}
-      </div>
-      </div>
+     <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center flex-wrap mb-3">
+  {/* Heading Section */}
+  <div>
+    <h3 className="text-start mt-4 offer-heading text-uppercase fw-bold text-black mb-3 position-relative d-inline-block">
+      Categories
+      <span className="d-block bg-warning mt-1 rounded" style={{ width: '50px', height: '4px' }}></span>
+    </h3>
+  </div>
+
+  {/* Static Categories Section */}
+  <div className="d-flex gap-2 flex-wrap">
+    {categories.map((category, index) => (
+      <button
+        key={index}
+        className={`btn btn-outline-${getBootstrapClass(category.type)} ${activeCategory === index ? 'active bg-warning text-dark fw-bold' : ''}`}
+        onClick={() => setActiveCategory(index)}
+      >
+        {category.name}
+      </button>
+    ))}
+  </div>
+</div>
+
       {/* Category Cards (Slider) */}
       <div className="slider-section">
         <CategoryCards categories={filteredMenuItems} />
